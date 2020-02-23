@@ -1,0 +1,49 @@
+1.
+mysql> SELECT * FROM CustomerAccount WHERE balance < 700
+    -> ;
++----------------+-------------+---------+
+| account_number | branch_name | balance |
++----------------+-------------+---------+
+| A-253          | Mamelodi    |     350 |
+| A-562          | Sunnyside   |     400 |
++----------------+-------------+---------+
+2 rows in set (0.00 sec)
+
+2.
+mysql> SELECT * FROM Customer WHERE customer_city = 'Johannesburg';
++---------------+-----------------+---------------+
+| customer_name | customer_street | customer_city |
++---------------+-----------------+---------------+
+| Brooks        | Senator         | Johannesburg  |
++---------------+-----------------+---------------+
+1 row in set (0.00 sec)
+
+3.
+mysql> SELECT * FROM Employee WHERE (salary > 1500) AND (branch_name != 'Newtown');
++---------------+-------------+--------+
+| employee_name | branch_name | salary |
++---------------+-------------+--------+
+| Gopal         | Sunnyside   |   5300 |
+| Sato          | Austin      |   1600 |
++---------------+-------------+--------+
+2 rows in set (0.00 sec)
+
+4.
+
+mysql> SELECT AVG(salary) FROM Employee
+    -> ;
++-------------+
+| AVG(salary) |
++-------------+
+|        2440 |
++-------------+
+1 row in set (0.00 sec)
+
+5.
+mysql> Select branch_name FROM BankBranch WHERE assets IN(SELECT MAX(assets) FROM BankBranch GROUP BY 'Group');
++-------------+
+| branch_name |
++-------------+
+| Newtown     |
++-------------+
+1 row in set (0.00 sec)

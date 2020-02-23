@@ -1,0 +1,58 @@
+1.
+mysql> SELECT employee_name FROM Employee WHERE branch_name ='Sunnyside';
++---------------+
+| employee_name |
++---------------+
+| Brown         |
+| Gopal         |
+| Modise        |
++---------------+
+3 rows in set (0.00 sec)
+
+2.
+mysql> SELECT * FROM Borrower;
++---------------+-------------+
+| customer_name | loan_number |
++---------------+-------------+
+| Johnson       | L-15        |
+| Jooste        | L-93        |
+| Modise        | L-16        |
+| Smith         | L-11        |
+| Williams      | L-17        |
+| Zwane         | L-15        |
++---------------+-------------+
+6 rows in set (0.00 sec)
+
+3.
+
+mysql> SELECT account_number FROM CustomerAccount WHERE balance >900;
++----------------+
+| account_number |
++----------------+
+| A-532          |
++----------------+
+1 row in set (0.00 sec)
+
+4.
+
+mysql> SELECT account_number, balance FROM CustomerAccount WHERE (balance >600 AND branch_name ='Newtown') ;
++----------------+---------+
+| account_number | balance |
++----------------+---------+
+| A-532          |    5000 |
++----------------+---------+
+1 row in set (0.00 sec)
+
+5.
+
+mysql> SELECT branch_name,assets FROM BankBranch;
++-------------+--------+
+| branch_name | assets |
++-------------+--------+
+| Belgravia   | 370000 |
+| Mabopane    |  40000 |
+| Mamelodi    | 800000 |
+| Midrand     | 710000 |
+| Newtown     | 900000 |
++-------------+--------+
+5 rows in set (0.00 sec)
